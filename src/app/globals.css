@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #123A5A;
+  --ink-secondary: #557B97;
+  --muted: #66859D;
+  --line: #D8EAF5;
+  --line-strong: #BFDDEC;
+  --paper: #F4FAFE;
+  --bg-primary: #FBFDFF;
+  --card: #FFFFFF;
+  --accent: #2F7FB5;
+  --accent-deep: #176B9F;
+  --accent-light: #EAF6FD;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-primary);
+  color: var(--ink);
+  font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: #CBE6F8;
+  color: #123A5A;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F4FAFE;
+}
+::-webkit-scrollbar-thumb {
+  background: #BFDDEC;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2F7FB5;
+}
+
+/* Animations & Transitions */
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes posterZoom {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-hero-in {
+  animation: heroFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-poster-in {
+  animation: posterZoom 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Glassmorphism Navigation */
+.nav-blur {
+  background: rgba(251, 253, 255, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+/* Accessible focus outline */
+a:focus-visible, button:focus-visible, input:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
