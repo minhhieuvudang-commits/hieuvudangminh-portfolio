@@ -1,10 +1,25 @@
 export type ProjectCategory = 
-  | "cfd-forex"
+  | "cfd-marketing"
   | "education"
   | "csr-corporate"
   | "social-media"
   | "freelance-brand"
+  | "content-creator"
+  | "business-events"
+  | "university-projects"
+  | "cfd-forex"
   | "sports-content";
+
+export interface CategoryConfig {
+  id: string;
+  label: string;
+  number: string;
+  shortName: string;
+  positioning?: string;
+  description: string;
+  iconName?: string;
+  tags?: string[];
+}
 
 export type SubCategory = 
   | "retail-promotions"
@@ -48,6 +63,7 @@ export interface Project {
   role: string;
   touchpoints: string[];
   summary: string;
+  customHtmlPath?: string;
   overview: string;
   challenge: string;
   objectives: {

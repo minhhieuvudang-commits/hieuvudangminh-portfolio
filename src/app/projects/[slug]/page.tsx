@@ -68,6 +68,53 @@ export default async function ProjectDetailPage({ params }: PageProps) {
     (p) => project.relatedProjectSlugs.includes(p.slug) || (p.category === project.category && p.slug !== project.slug)
   ).slice(0, 3);
 
+  // If a bespoke customized HTML case study exists for this project, render it with full visual fidelity
+  if (project.customHtmlPath) {
+    return (
+      <div className="min-h-screen flex flex-col bg-[#050c25]">
+        {/* Sleek Top Control Bar */}
+        <header className="sticky top-0 z-50 w-full bg-[#071131]/95 backdrop-blur-md border-b border-[#213a70] px-4 sm:px-6 h-14 flex items-center justify-between text-white shadow-md">
+          <div className="flex items-center gap-3 truncate">
+            <Link
+              href="/#projects"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#12224d] hover:bg-[#1b3475] text-xs font-bold text-sky-300 border border-[#2b519a] transition-all hover:-translate-x-0.5 shrink-0"
+            >
+              <ArrowLeft className="w-3.5 h-3.5" />
+              <span>← Back to Portfolio</span>
+            </Link>
+            <div className="hidden sm:flex items-center gap-2 text-xs font-semibold text-slate-300 truncate">
+              <span className="px-2 py-0.5 rounded bg-sky-950 border border-sky-800 text-[10px] font-black text-sky-400 shrink-0">
+                {project.sectionNumber}
+              </span>
+              <span className="truncate max-w-sm">{project.title}</span>
+              <span className="text-slate-500">·</span>
+              <span className="text-slate-400 text-[11px] truncate">{project.company}</span>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-2 shrink-0">
+            <a
+              href={project.customHtmlPath}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-[#1b62cc] hover:bg-[#144ea3] text-xs font-bold text-white transition-colors"
+            >
+              <span>Full Page</span>
+              <ArrowUpRight className="w-3.5 h-3.5" />
+            </a>
+          </div>
+        </header>
+
+        {/* Pixel-Perfect Custom HTML Viewport */}
+        <iframe
+          src={project.customHtmlPath}
+          title={project.title}
+          className="w-full flex-1 border-0 min-h-[calc(100vh-56px)] bg-transparent"
+        />
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen flex flex-col bg-[#FBFDFF] text-[#123A5A]">
       <Navbar />
