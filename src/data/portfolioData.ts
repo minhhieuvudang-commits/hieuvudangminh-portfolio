@@ -134,6 +134,7 @@ export const PROJECTS: Project[] = [
   // SECTION 01.1 — Retail Promotions
   {
     slug: "the-treasure-hunt-journey",
+    coverImage: "/images/projects/pmt299-treasure-hunt-portfolio-v5-kv.png",
     customHtmlPath: "/case-studies/PMT299_Treasure_Hunt_Portfolio_V5.html",
     title: "The Treasure Hunt Journey — PMT299",
     subtitle: "A trading-volume-based reward campaign featuring 12 incentive tiers.",
@@ -341,6 +342,7 @@ export const PROJECTS: Project[] = [
   // SECTION 01.3 — Loyalty Programs
   {
     slug: "point-mall-loyalty",
+    coverImage: "/images/projects/star-loyalty-pmt-vn02-portfolio-planning-v1-kv.jpg",
     customHtmlPath: "/case-studies/STAR_Loyalty_PMT-VN02_Portfolio_Planning_V1.html",
     title: "Point Mall — Retail Loyalty Program",
     subtitle: "Always-on gamified client retention and trading frequency initiative.",
@@ -515,6 +517,7 @@ export const PROJECTS: Project[] = [
   // SECTION 01.4 — Brand Campaigns & Client Engagement
   {
     slug: "vietnam-world-cup-giveaway",
+    coverImage: "/images/projects/pmt298-world-cup-giveaway-portfolio-v3-kv.jpg",
     customHtmlPath: "/case-studies/PMT298_World_Cup_Giveaway_Portfolio_V3.html",
     title: "Vietnam World Cup Giveaway",
     subtitle: "High-engagement social campaign linking a global football tournament with qualified account activation.",
@@ -624,6 +627,7 @@ export const PROJECTS: Project[] = [
 
   {
     slug: "mid-autumn-gifting",
+    coverImage: "/images/projects/seasonal-kol-gifting-portfolio-v1-kv.jpg",
     customHtmlPath: "/case-studies/Seasonal_KOL_Gifting_Portfolio_V1.html",
     title: "Mid-Autumn KOL & Client Gifting",
     subtitle: "Bespoke seasonal relationship marketing, vendor sourcing, and VIP partner appreciation.",
@@ -724,6 +728,7 @@ export const PROJECTS: Project[] = [
 
   {
     slug: "halloween-keyword-hunt",
+    coverImage: "/images/projects/pmt336-halloween-keyword-hunt-portfolio-v1-kv.jpg",
     customHtmlPath: "/case-studies/PMT336_Halloween_Keyword_Hunt_Portfolio_V1.html",
     title: "Halloween — Keyword Hunt",
     subtitle: "Seasonal interactive gamification campaign designed to boost website engagement and content discovery.",
@@ -1016,6 +1021,7 @@ export const PROJECTS: Project[] = [
 
   {
     slug: "vps-reimbursement",
+    coverImage: "/images/projects/pmt078-vps-reimbursement-kv.webp",
     customHtmlPath: "/case-studies/PMT078_VPS_Reimbursement.html",
     title: "VPS Reimbursement Program",
     subtitle: "Infrastructure awareness and operational flow for algorithmic traders.",

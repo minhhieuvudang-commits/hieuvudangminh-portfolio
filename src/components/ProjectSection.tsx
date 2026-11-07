@@ -460,18 +460,46 @@ export default function ProjectSection() {
                   </span>
                 </div>
 
-                {/* Editorial Visual Header Banner for Projects */}
-                <div className="mb-5 p-4 rounded-xl bg-gradient-to-br from-[#EAF6FD] to-[#DCEFF9] border border-[#BFDDEC] flex flex-col justify-between min-h-[110px] group-hover:from-[#E1F1FB] group-hover:to-[#D4EAF7] transition-colors">
-                  <div className="flex items-center justify-between text-[10px] font-extrabold uppercase tracking-wider text-[#2F7FB5]">
-                    <span>{project.company}</span>
-                    <span>{project.market}</span>
+                {/* Card Banner: Custom Cover Image or Editorial Typographic Gradient */}
+                {project.coverImage ? (
+                  <div className="mb-5 relative w-full h-44 rounded-xl overflow-hidden border border-[#D8EAF5] bg-[#071131] shadow-inner group/banner">
+                    <img
+                      src={project.coverImage}
+                      alt={project.title}
+                      className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#071131]/90 via-[#071131]/25 to-black/20" />
+                    
+                    {/* Top Company & Market Glass Badges */}
+                    <div className="absolute top-3 left-3 right-3 flex items-center justify-between text-[10px] font-extrabold uppercase tracking-wider text-white">
+                      <span className="px-2 py-0.5 rounded bg-black/50 backdrop-blur-md border border-white/20 shadow-xs">
+                        {project.company}
+                      </span>
+                      <span className="px-2 py-0.5 rounded bg-black/50 backdrop-blur-md border border-white/20 shadow-xs">
+                        {project.market}
+                      </span>
+                    </div>
+
+                    {/* Bottom Title on Image */}
+                    <div className="absolute bottom-3 left-3 right-3">
+                      <span className="text-base font-black tracking-tight text-white block leading-tight drop-shadow-md line-clamp-2">
+                        {project.title}
+                      </span>
+                    </div>
                   </div>
-                  <div className="mt-2">
-                    <span className="text-lg font-black tracking-tight text-[#123A5A] block leading-tight">
-                      {project.title}
-                    </span>
+                ) : (
+                  <div className="mb-5 p-4 rounded-xl bg-gradient-to-br from-[#EAF6FD] to-[#DCEFF9] border border-[#BFDDEC] flex flex-col justify-between min-h-[110px] group-hover:from-[#E1F1FB] group-hover:to-[#D4EAF7] transition-colors">
+                    <div className="flex items-center justify-between text-[10px] font-extrabold uppercase tracking-wider text-[#2F7FB5]">
+                      <span>{project.company}</span>
+                      <span>{project.market}</span>
+                    </div>
+                    <div className="mt-2">
+                      <span className="text-lg font-black tracking-tight text-[#123A5A] block leading-tight">
+                        {project.title}
+                      </span>
+                    </div>
                   </div>
-                </div>
+                )}
 
                 {/* Subtitle & Summary */}
                 <h3 className="text-base font-bold text-[#123A5A] mb-2 group-hover:text-[#176B9F] transition-colors">

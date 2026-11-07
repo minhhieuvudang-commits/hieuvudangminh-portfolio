@@ -63,6 +63,7 @@ export interface Project {
   role: string;
   touchpoints: string[];
   summary: string;
+  coverImage?: string;
   customHtmlPath?: string;
   overview: string;
   challenge: string;
