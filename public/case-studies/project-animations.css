@@ -1,0 +1,131 @@
+/* ==========================================================================
+   HIEU VU DANG MINH — PREMIUM EDITORIAL ANIMATIONS ENGINE
+   ========================================================================== */
+
+/* Respect user's accessibility preferences */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+  }
+}
+
+/* Reading Progress Bar at the Top */
+#reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #18e5df, #2f7fb5, #7efcff);
+  z-index: 99999;
+  width: 0%;
+  pointer-events: none;
+  transition: width 0.1s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 0 10px rgba(24, 229, 223, 0.6);
+}
+
+/* Scroll Reveal Base Class */
+.reveal-item {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-item.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Smooth Entrance for Hero elements on load */
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroScaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Ambient Floating Keyframes for Hero Orbs / Key Visuals */
+@keyframes floatAmbient {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(1deg);
+  }
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 25px rgba(24, 229, 223, 0.25));
+  }
+  50% {
+    filter: drop-shadow(0 0 50px rgba(24, 229, 223, 0.5));
+  }
+}
+
+/* Card & Interactive Micro-Interactions */
+.card, .step, .notice, .box, [class*="card"] {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.3s ease,
+              background-color 0.3s ease !important;
+}
+
+.card:hover, .step:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.38) !important;
+  border-color: rgba(24, 229, 223, 0.45) !important;
+}
+
+/* Floating Orb / Visual Element */
+.orb {
+  animation: floatAmbient 7s ease-in-out infinite, glowPulse 5s ease-in-out infinite !important;
+}
+
+/* Buttons micro-interaction */
+.button, a[class*="button"], button {
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.2s ease, 
+              background-color 0.2s ease,
+              color 0.2s ease !important;
+}
+
+.button:hover, a[class*="button"]:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 20px rgba(24, 229, 223, 0.35) !important;
+}
+
+.button:active, a[class*="button"]:active {
+  transform: translateY(0px) !important;
+}
+
+/* Tags hover effect */
+.pill, .tag, [class*="tag"], [class*="badge"] {
+  transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease !important;
+}
+
+.pill:hover, .tag:hover {
+  transform: scale(1.05) !important;
+  border-color: #18e5df !important;
+}
