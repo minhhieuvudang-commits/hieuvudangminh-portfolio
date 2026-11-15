@@ -1,89 +1,111 @@
 import React from "react";
-import { CheckCircle2, Target, Users2, ShieldCheck, ArrowRight } from "lucide-react";
+import { CheckCircle2, Target, Users2, ShieldCheck, ArrowRight, Sparkles } from "lucide-react";
 import Link from "next/link";
 
 export default function AboutSection() {
   const pillars = [
     {
+      num: "01",
       icon: Target,
       title: "I can plan projects.",
       desc: "Translate ambiguous commercial targets into concrete project charters, milestone schedules, realistic budget models, and verifiable deliverables.",
+      tag: "Project Charters & Timelines",
     },
     {
+      num: "02",
       icon: Users2,
       title: "I can coordinate people & execution.",
       desc: "Align cross-functional departments (Marketing, BD, Product, Compliance, Customer Support) and global leadership while managing 50+ external specialized vendors.",
+      tag: "Stakeholder & Vendor Ops",
     },
     {
+      num: "03",
       icon: ShieldCheck,
       title: "I can deliver measurable outcomes.",
       desc: "Drive on-time milestone handovers, transparent budget reconciliations (up to 500M+ VND), and verifiable campaign results with zero compliance disputes.",
+      tag: "On-Time Milestones & Budget",
     },
   ];
 
   return (
-    <section id="about" className="py-20 md:py-28 border-t border-[#D8EAF5] bg-white">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Tag & Heading */}
-        <div className="max-w-3xl mb-14">
-          <span className="text-xs font-black uppercase tracking-widest text-[#176B9F] mb-3 block">
-            About My Coordination Mindset
-          </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-[#123A5A] leading-[1.08] mb-6">
-            Creative roots. Rigorous project execution.
-          </h2>
-          <p className="text-base sm:text-lg leading-relaxed text-[#557B97]">
-            Trained in creative leadership during my university years at UEH (GPA 8.50/10) and refined through 3+ years in high-tempo venture operations (JDI) and global financial brokerage (STARTRADER), I operate as the connective tissue between commercial ambition and ground-level execution.
-          </p>
+    <section id="about" className="py-20 md:py-28 border-t border-slate-200 bg-white relative overflow-hidden">
+      {/* Decorative Lookbook Dot Grid */}
+      <div className="absolute top-12 left-8 w-24 h-24 lookbook-dot-grid opacity-30 pointer-events-none" />
+
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        {/* Magazine Spread: Header with Vertical Ribbon text */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-16">
+          
+          <div className="lg:col-span-1 hidden lg:flex justify-center">
+            <span className="lookbook-vertical-text text-5xl font-black tracking-[0.25em] text-slate-200 uppercase select-none pointer-events-none">
+              ABOUT ME
+            </span>
+          </div>
+
+          <div className="lg:col-span-11 max-w-3xl">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#EAF6FD] border border-[#BFDDEC] text-[10px] font-black uppercase tracking-widest text-[#0284C7] mb-3">
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>Coordination Mindset · Operating Philosophy</span>
+            </div>
+
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-slate-900 leading-[1.08] mb-5 uppercase">
+              Creative roots. <span className="text-[#0284C7]">Rigorous</span> project execution.
+            </h2>
+
+            <p className="text-base sm:text-lg leading-relaxed text-slate-600 font-normal">
+              Trained in creative leadership during my university years at UEH (GPA 8.50/10) and refined through 3+ years in high-tempo venture operations (JDI) and global financial brokerage (STARTRADER), I operate as the connective tissue between commercial ambition and ground-level execution.
+            </p>
+          </div>
+
         </div>
 
-        {/* 3 Core Commitments Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        {/* 3 Core Commitment Spreads (With Offset Wireframe Boxes & Number Headers) */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {pillars.map((pillar) => {
             const Icon = pillar.icon;
             return (
               <div
                 key={pillar.title}
-                className="p-8 rounded-2xl bg-[#F6FBFF] border border-[#D8EAF5] hover:border-[#BFDDEC] transition-all duration-300 hover:shadow-lg hover:shadow-[#176B9F]/06 hover:-translate-y-1 flex flex-col justify-between"
+                className="group relative p-7 bg-[#F8FAFC] border-2 border-slate-900 rounded-sm hover:shadow-xl hover:shadow-slate-900/10 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
               >
-                <div>
-                  <div className="w-12 h-12 rounded-xl bg-[#EAF6FD] border border-[#BFDDEC] flex items-center justify-center text-[#176B9F] mb-6">
-                    <Icon className="w-6 h-6" />
+                {/* Offset wireframe border */}
+                <div
+                  className="absolute -top-2 -right-2 w-full h-full border border-sky-400 rounded-xs pointer-events-none group-hover:border-slate-900 transition-colors z-0"
+                  aria-hidden="true"
+                />
+
+                <div className="relative z-10">
+                  {/* Top row: Number 01., 02., 03. + Icon */}
+                  <div className="flex items-center justify-between mb-6 pb-3 border-b border-slate-200">
+                    <span className="text-3xl font-black text-slate-900 tracking-tight">
+                      {pillar.num}.
+                    </span>
+                    <div className="w-10 h-10 rounded-sm bg-white border border-slate-300 flex items-center justify-center text-[#0284C7] shadow-xs">
+                      <Icon className="w-5 h-5" />
+                    </div>
                   </div>
-                  <h3 className="text-xl font-black tracking-tight text-[#123A5A] mb-3">
+
+                  <h3 className="text-lg font-black tracking-tight text-slate-900 mb-2">
                     {pillar.title}
                   </h3>
-                  <p className="text-sm leading-relaxed text-[#557B97]">
+
+                  <p className="text-xs sm:text-sm leading-relaxed text-slate-600 font-normal">
                     {pillar.desc}
                   </p>
                 </div>
-                <div className="mt-6 pt-4 border-t border-[#D8EAF5]/60 flex items-center gap-2 text-xs font-bold text-[#176B9F]">
-                  <CheckCircle2 className="w-4 h-4 text-[#2F7FB5]" />
-                  <span>Demonstrated across 40+ initiatives</span>
+
+                <div className="relative z-10 mt-6 pt-4 border-t border-slate-200 flex items-center justify-between">
+                  <span className="text-[10px] font-black uppercase tracking-wider text-[#0284C7]">
+                    {pillar.tag}
+                  </span>
+                  <ArrowRight className="w-4 h-4 text-slate-400 group-hover:translate-x-1 group-hover:text-slate-900 transition-all" />
                 </div>
               </div>
             );
           })}
         </div>
 
-        {/* Supporting Quote / Credo */}
-        <div className="mt-14 p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-[#EAF6FD] via-[#F4FAFE] to-white border border-[#BFDDEC] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-          <div className="max-w-2xl">
-            <p className="text-sm sm:text-base font-semibold text-[#123A5A] leading-relaxed">
-              &ldquo;Great project coordination is not about administrative bureaucracy — it is the art of removing friction so specialized teams do their best work without dropping the ball on budget, compliance, or schedule.&rdquo;
-            </p>
-            <span className="block text-xs text-[#66859D] mt-2 font-medium">
-              — Hieu Vu Dang Minh, Marketing Project Coordinator
-            </span>
-          </div>
-          <Link
-            href="#projects"
-            className="inline-flex items-center gap-2 px-5 py-2.5 text-xs font-bold text-[#176B9F] bg-white border border-[#BFDDEC] hover:bg-[#EAF6FD] rounded-full transition-all shrink-0"
-          >
-            <span>See Case Studies</span>
-            <ArrowRight className="w-3.5 h-3.5" />
-          </Link>
-        </div>
       </div>
     </section>
   );

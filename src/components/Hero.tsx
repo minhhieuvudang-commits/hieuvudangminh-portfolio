@@ -6,142 +6,163 @@ import { PERSONAL_INFO } from "@/data/portfolioData";
 
 export default function Hero() {
   return (
-    <header className="relative overflow-hidden pt-12 pb-16 md:pt-20 md:pb-24 border-b border-[#D8EAF5] bg-[radial-gradient(ellipse_at_85%_15%,rgba(185,225,247,0.35),transparent_40%),radial-gradient(ellipse_at_15%_85%,rgba(216,234,245,0.4),transparent_40%),linear-gradient(135deg,#F6FBFF_0%,#FFFFFF_50%,#EAF6FD_100%)]">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+    <header className="relative overflow-hidden pt-8 pb-16 md:pt-14 md:pb-24 border-b border-[#D8EAF5] bg-[#FBFDFF]">
+      {/* Background Subtle Magazine Watermark Grid */}
+      <div className="absolute inset-0 pointer-events-none opacity-40">
+        <div className="absolute top-12 left-6 w-24 h-24 lookbook-dot-grid" />
+        <div className="absolute bottom-8 right-12 w-32 h-32 lookbook-dot-grid" />
+      </div>
+
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        {/* Magazine Spread Layout: Left/Top is Portrait with Offset Frame, Bottom is Headline Block */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
-          {/* Left Column: Headlines & Introduction */}
-          <div className="lg:col-span-7 flex flex-col items-start animate-hero-in">
-            {/* Tagline / Eyebrow */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#EAF6FD] border border-[#BFDDEC] text-[11px] font-extrabold uppercase tracking-widest text-[#176B9F] mb-6">
-              <Sparkles className="w-3.5 h-3.5 text-[#2F7FB5]" />
-              <span>CFD & Forex · Fintech · Marketing Operations</span>
+          {/* =========================================================================
+              LEFT COLUMN: Editorial Portrait with Lookbook Offset Wireframe & Accents
+             ========================================================================= */}
+          <div className="lg:col-span-5 relative flex justify-center lg:justify-start">
+            
+            {/* Giant Vertical Margin Text "PORTFOLIO" (From template left margin) */}
+            <div className="hidden xl:block absolute -left-20 top-1/2 -translate-y-1/2 select-none pointer-events-none">
+              <span className="lookbook-vertical-text text-7xl font-black tracking-[0.25em] text-sky-900/[0.06] uppercase">
+                PORTFOLIO
+              </span>
             </div>
 
-            {/* Primary Headline: Full Name (Largest headline on homepage) */}
-            <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[76px] font-black tracking-tight leading-[0.94] text-[#123A5A] uppercase mb-4">
-              {PERSONAL_INFO.name}
-            </h1>
+            {/* The Main Magazine Photo Frame */}
+            <div className="relative w-full max-w-[360px] sm:max-w-[400px]">
+              
+              {/* Offset Wireframe Border (Khung viền lệch signature từ template) */}
+              <div
+                className="absolute -top-4 -right-4 sm:-top-5 sm:-right-5 w-full h-full border-2 border-[#0284C7] rounded-sm pointer-events-none z-20"
+                aria-hidden="true"
+              />
 
-            {/* Professional Title & Supporting Headline */}
-            <div className="mb-6">
-              <p className="text-xl sm:text-2xl font-bold tracking-tight text-[#176B9F]">
-                {PERSONAL_INFO.title}
-              </p>
-              <p className="text-base sm:text-lg font-medium text-[#557B97] mt-1 italic tracking-wide">
-                &ldquo;{PERSONAL_INFO.tagline}&rdquo;
-              </p>
+              {/* Pastel Sky Backplate (Mảng màu nền sau ảnh) */}
+              <div
+                className="absolute -bottom-3 -left-3 w-full h-full bg-[#EAF6FD] rounded-sm pointer-events-none z-0"
+                aria-hidden="true"
+              />
+
+              {/* Main Photo Container */}
+              <div className="relative z-10 bg-white p-2 sm:p-2.5 rounded-sm shadow-xl shadow-sky-950/10 border border-slate-200">
+                <div className="relative aspect-[3/4] w-full overflow-hidden bg-slate-100">
+                  <Image
+                    src="/images/portrait.jpg"
+                    alt={`${PERSONAL_INFO.name} — ${PERSONAL_INFO.title}`}
+                    fill
+                    priority
+                    sizes="(max-width: 768px) 100vw, 400px"
+                    className="object-cover object-top hover:scale-102 transition-transform duration-700 ease-out"
+                  />
+                  
+                  {/* Subtle Corner Badge */}
+                  <div className="absolute bottom-3 left-3 px-3 py-1 bg-white/90 backdrop-blur-md border border-slate-200 text-[10px] font-black uppercase tracking-wider text-slate-800 shadow-xs">
+                    STARTRADER · HCMC
+                  </div>
+                </div>
+              </div>
+
+              {/* Color Swatch Chips (3 ô vuông màu xếp dọc từ template) */}
+              <div className="absolute -right-7 sm:-right-8 top-1/3 flex flex-col gap-2 z-30 pointer-events-none">
+                <span className="w-4 h-4 rounded-xs bg-[#0284C7] shadow-xs" title="Ocean Tech Cyan" />
+                <span className="w-4 h-4 rounded-xs bg-[#38BDF8] shadow-xs" title="Sky Blue" />
+                <span className="w-4 h-4 rounded-xs bg-[#F59E0B] shadow-xs" title="Fintech Gold" />
+              </div>
+
+              {/* Dot Matrix Pattern Accent */}
+              <div className="absolute -left-6 -bottom-6 w-16 h-16 lookbook-dot-grid opacity-60 z-0 pointer-events-none" />
             </div>
+          </div>
+
+          {/* =========================================================================
+              RIGHT COLUMN: Magazine Editorial Headline & Biography Block
+             ========================================================================= */}
+          <div className="lg:col-span-7 flex flex-col items-start">
+            
+            {/* Top Eyebrow / Category Tag */}
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#EAF6FD] border border-[#BFDDEC] text-[10px] font-black uppercase tracking-widest text-[#0284C7] mb-4 shadow-xs">
+              <Sparkles className="w-3.5 h-3.5 text-[#0284C7]" />
+              <span>Fintech & CFD Marketing · Project Coordination</span>
+            </div>
+
+            {/* Template Signature: "HI, I'M" */}
+            <span className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight uppercase mb-2">
+              HI, I&apos;M
+            </span>
+
+            {/* Template Signature: Bold Solid Name Badge */}
+            <div className="mb-4">
+              <div className="inline-block bg-[#0284C7] text-white px-5 sm:px-7 py-2 sm:py-2.5 rounded-sm font-black text-3xl sm:text-5xl md:text-[54px] tracking-wider uppercase shadow-md leading-none">
+                {PERSONAL_INFO.name}
+              </div>
+            </div>
+
+            {/* Professional Title & Subhead */}
+            <h2 className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight uppercase mb-1">
+              {PERSONAL_INFO.title} <span className="text-slate-400 font-bold">(2023–2026)</span>
+            </h2>
+
+            {/* Tagline / Motto */}
+            <p className="text-base font-semibold text-[#0284C7] italic mb-4">
+              &ldquo;{PERSONAL_INFO.tagline}&rdquo;
+            </p>
 
             {/* Introduction Copy */}
-            <p className="text-base sm:text-lg leading-relaxed text-[#475467] max-w-2xl mb-8">
+            <p className="text-sm sm:text-base leading-relaxed text-slate-600 max-w-2xl mb-8 font-normal">
               {PERSONAL_INFO.bio}
             </p>
 
-            {/* CTA Buttons */}
+            {/* Lookbook Action Buttons */}
             <div className="flex flex-wrap items-center gap-3 w-full sm:w-auto">
-              {/* Primary CTA */}
               <Link
                 href="#projects"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-bold text-white bg-[#176B9F] hover:bg-[#123A5A] rounded-full transition-all duration-200 hover:-translate-y-0.5 shadow-md shadow-[#176B9F]/15 active:translate-y-0"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 text-xs font-black uppercase tracking-wider text-white bg-slate-900 hover:bg-[#0284C7] rounded-sm transition-all duration-200 hover:-translate-y-0.5 shadow-md active:translate-y-0"
               >
-                <span>Explore My Work</span>
-                <ArrowRight className="w-4 h-4" />
+                <span>Explore Selected Work</span>
+                <ArrowRight className="w-3.5 h-3.5" />
               </Link>
 
-              {/* Download CV */}
               <a
                 href={PERSONAL_INFO.cvUrl}
                 download="CV_Hieu_Vu_Dang_Minh_2026.pdf"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-bold text-[#176B9F] bg-white hover:bg-[#EAF6FD] border border-[#BFDDEC] rounded-full transition-all duration-200 hover:-translate-y-0.5 shadow-xs"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 text-xs font-black uppercase tracking-wider text-slate-800 bg-white hover:bg-slate-50 border border-slate-300 rounded-sm transition-all duration-200 hover:-translate-y-0.5 shadow-xs"
               >
-                <Download className="w-4 h-4" />
+                <Download className="w-3.5 h-3.5 text-[#0284C7]" />
                 <span>Download CV</span>
               </a>
 
-              {/* Contact Me */}
               <Link
                 href="#contact"
-                className="inline-flex items-center justify-center gap-2 px-5 py-3.5 text-sm font-bold text-[#557B97] hover:text-[#123A5A] hover:bg-white/80 rounded-full transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3 text-xs font-black uppercase tracking-wider text-slate-600 hover:text-slate-900 transition-colors"
               >
-                <Mail className="w-4 h-4" />
+                <Mail className="w-3.5 h-3.5" />
                 <span>Contact Me</span>
               </Link>
             </div>
 
-            {/* Target Roles Pill List */}
-            <div className="mt-10 pt-6 border-t border-[#D8EAF5]/80 w-full">
-              <span className="block text-[11px] font-extrabold uppercase tracking-widest text-[#66859D] mb-2.5">
-                Target Roles
+            {/* Target Roles in Minimal Lookbook Tag Style */}
+            <div className="mt-8 pt-5 border-t border-slate-200 w-full">
+              <span className="block text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2">
+                Specialized Competencies
               </span>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-1.5">
                 {PERSONAL_INFO.targetRoles.map((role) => (
                   <span
                     key={role}
-                    className="px-2.5 py-1 text-xs font-semibold bg-[#F4FAFE] border border-[#D8EAF5] text-[#123A5A] rounded-md"
+                    className="px-2.5 py-1 text-[11px] font-bold bg-white border border-slate-200 text-slate-700 rounded-sm shadow-xs"
                   >
                     {role}
                   </span>
                 ))}
               </div>
             </div>
-          </div>
 
-          {/* Right Column: Professional Portrait Frame */}
-          <div className="lg:col-span-5 flex justify-center lg:justify-end animate-poster-in">
-            <div className="relative w-full max-w-[380px] group">
-              {/* Decorative Background Accents */}
-              <div className="absolute -inset-2 bg-gradient-to-tr from-[#BFDDEC] to-[#EAF6FD] rounded-3xl transform rotate-1 group-hover:rotate-0 transition-transform duration-500 opacity-80" />
-              <div className="absolute -inset-1 bg-[#176B9F]/10 rounded-3xl blur-md" />
-              
-              {/* Photo Card Container */}
-              <div className="relative bg-white border border-[#BFDDEC] rounded-2xl overflow-hidden shadow-xl shadow-[#123A5A]/08">
-                {/* Header Decoration */}
-                <div className="px-5 py-3 bg-[#EAF6FD] border-b border-[#D8EAF5] flex items-center justify-between">
-                  <span className="text-[10px] font-black uppercase tracking-widest text-[#176B9F]">
-                    HIEU / PORTFOLIO 2026
-                  </span>
-                  <span className="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#557B97]">
-                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                    Available for Q4/2026 Roles
-                  </span>
-                </div>
-
-                {/* Portrait Image */}
-                <div className="relative aspect-[4/5] w-full overflow-hidden bg-[#F4FAFE]">
-                  <Image
-                    src="/images/portrait.jpg"
-                    alt="Hieu Vu Dang Minh — Marketing Project Coordinator"
-                    fill
-                    priority
-                    sizes="(max-width: 768px) 100vw, 380px"
-                    className="object-cover object-top filter contrast-[1.02] brightness-[1.01] transition-transform duration-700 group-hover:scale-[1.03]"
-                  />
-                </div>
-
-                {/* Card Footer Caption */}
-                <div className="px-5 py-3.5 bg-white border-t border-[#D8EAF5]">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <p className="text-xs font-bold text-[#123A5A]">
-                        Hieu Vu Dang Minh
-                      </p>
-                      <p className="text-[11px] text-[#66859D]">
-                        Ho Chi Minh City, Vietnam
-                      </p>
-                    </div>
-                    <div className="text-right">
-                      <span className="inline-block px-2 py-0.5 text-[10px] font-black uppercase tracking-wider text-[#176B9F] bg-[#EAF6FD] border border-[#BFDDEC] rounded-full">
-                        Coordinator
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
 
         </div>
+
       </div>
     </header>
   );

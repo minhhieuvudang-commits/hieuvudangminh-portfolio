@@ -92,6 +92,21 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   outline-offset: 2px;
 }
 
+/* Lookbook Editorial Magazine Style Accents */
+.lookbook-dot-grid {
+  background-image: radial-gradient(#0284C7 1.5px, transparent 1.5px);
+  background-size: 12px 12px;
+}
+
+.lookbook-vertical-text {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+.lookbook-offset-border {
+  position: relative;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
