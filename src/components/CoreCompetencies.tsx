@@ -26,7 +26,7 @@ export default function CoreCompetencies() {
           </div>
 
           <div className="lg:col-span-11 max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#EAF6FD] border border-[#BFDDEC] text-[10px] font-black uppercase tracking-widest text-[#0284C7] mb-3">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EAF6FD] border border-[#BFDDEC] text-[10px] font-black uppercase tracking-widest text-[#0284C7] mb-3">
               <Cpu className="w-3.5 h-3.5" />
               <span>Professional Capabilities · Core Pillars</span>
             </div>
@@ -50,19 +50,19 @@ export default function CoreCompetencies() {
             return (
               <div
                 key={pillar.category}
-                className="group relative p-7 sm:p-8 rounded-sm bg-[#F8FAFC] border-2 border-slate-900 shadow-md hover:shadow-xl hover:shadow-slate-900/10 transition-all duration-300 flex flex-col justify-between"
+                className="group relative p-7 sm:p-8 rounded-3xl bg-white border border-slate-200/90 shadow-sm hover:shadow-xl hover:shadow-sky-950/8 hover:border-[#0284C7] transition-all duration-300 flex flex-col justify-between"
               >
                 {/* Offset wireframe border */}
                 <div
-                  className="absolute -top-2.5 -right-2.5 w-full h-full border border-sky-400 group-hover:border-slate-900 rounded-xs pointer-events-none transition-colors"
+                  className="absolute -top-2.5 -right-2.5 w-full h-full border border-sky-300 group-hover:border-[#0284C7] rounded-3xl pointer-events-none transition-colors"
                   aria-hidden="true"
                 />
 
                 <div className="relative z-10">
                   {/* Category Header */}
-                  <div className="flex items-center justify-between pb-4 mb-4 border-b border-slate-200">
+                  <div className="flex items-center justify-between pb-4 mb-4 border-b border-slate-100">
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-sm bg-white border border-slate-300 flex items-center justify-center text-[#0284C7] shadow-xs">
+                      <div className="w-10 h-10 rounded-xl bg-[#EAF6FD] border border-[#BFDDEC] flex items-center justify-center text-[#0284C7] shadow-xs">
                         <Icon className="w-5 h-5" />
                       </div>
                       <div>
@@ -85,7 +85,7 @@ export default function CoreCompetencies() {
                     {pillar.skills.map((skill) => (
                       <div
                         key={skill}
-                        className="flex items-center gap-2 p-2.5 rounded-sm bg-white border border-slate-200 text-xs font-semibold text-slate-700 shadow-2xs hover:border-[#0284C7] transition-colors"
+                        className="flex items-center gap-2 p-2.5 rounded-xl bg-[#F8FAFC] border border-slate-200/80 text-xs font-semibold text-slate-700 shadow-2xs hover:border-[#0284C7] transition-colors"
                       >
                         <Check className="w-3.5 h-3.5 text-[#0284C7] shrink-0" />
                         <span className="truncate">{skill}</span>

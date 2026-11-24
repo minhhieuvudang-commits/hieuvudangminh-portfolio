@@ -44,19 +44,19 @@ export default function Hero() {
               
               {/* Offset Wireframe Border (Khung viền lệch signature từ template) */}
               <div
-                className="absolute -top-4 -right-4 sm:-top-5 sm:-right-5 w-full h-full border-2 border-[#0284C7] rounded-sm pointer-events-none z-20"
+                className="absolute -top-4 -right-4 sm:-top-5 sm:-right-5 w-full h-full border-2 border-[#0284C7] rounded-3xl pointer-events-none z-20"
                 aria-hidden="true"
               />
 
               {/* Pastel Sky Backplate (Mảng màu nền sau ảnh) */}
               <div
-                className="absolute -bottom-3 -left-3 w-full h-full bg-[#EAF6FD] rounded-sm pointer-events-none z-0"
+                className="absolute -bottom-3 -left-3 w-full h-full bg-[#EAF6FD] rounded-3xl pointer-events-none z-0"
                 aria-hidden="true"
               />
 
               {/* Main Photo Container */}
-              <div className="relative z-10 bg-white p-2 sm:p-2.5 rounded-sm shadow-xl shadow-sky-950/10 border border-slate-200">
-                <div className="relative aspect-[3/4] w-full overflow-hidden bg-slate-100">
+              <div className="relative z-10 bg-white p-2.5 sm:p-3 rounded-3xl shadow-xl shadow-sky-950/10 border border-slate-200">
+                <div className="relative aspect-[3/4] w-full overflow-hidden bg-slate-100 rounded-2xl">
                   <Image
                     src="/images/portrait.jpg"
                     alt={`${PERSONAL_INFO.name} — ${PERSONAL_INFO.title}`}
@@ -67,7 +67,7 @@ export default function Hero() {
                   />
                   
                   {/* Subtle Corner Badge */}
-                  <div className="absolute bottom-3 left-3 px-3 py-1 bg-white/90 backdrop-blur-md border border-slate-200 text-[10px] font-black uppercase tracking-wider text-slate-800 shadow-xs">
+                  <div className="absolute bottom-3 left-3 px-3 py-1 bg-white/90 backdrop-blur-md border border-slate-200 text-[10px] font-black uppercase tracking-wider text-slate-800 shadow-xs rounded-lg">
                     STARTRADER · HCMC
                   </div>
                 </div>
@@ -75,9 +75,9 @@ export default function Hero() {
 
               {/* Color Swatch Chips (3 ô vuông màu xếp dọc từ template) */}
               <div className="absolute -right-7 sm:-right-8 top-1/3 flex flex-col gap-2 z-30 pointer-events-none">
-                <span className="w-4 h-4 rounded-xs bg-[#0284C7] shadow-xs" title="Ocean Tech Cyan" />
-                <span className="w-4 h-4 rounded-xs bg-[#38BDF8] shadow-xs" title="Sky Blue" />
-                <span className="w-4 h-4 rounded-xs bg-[#F59E0B] shadow-xs" title="Fintech Gold" />
+                <span className="w-4 h-4 rounded-full bg-[#0284C7] shadow-xs" title="Ocean Tech Cyan" />
+                <span className="w-4 h-4 rounded-full bg-[#38BDF8] shadow-xs" title="Sky Blue" />
+                <span className="w-4 h-4 rounded-full bg-[#F59E0B] shadow-xs" title="Fintech Gold" />
               </div>
 
               {/* Dot Matrix Pattern Accent */}
@@ -94,7 +94,7 @@ export default function Hero() {
           <div className="lg:col-span-7 flex flex-col items-start">
             
             {/* Top Eyebrow / Category Tag */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#EAF6FD] border border-[#BFDDEC] text-[10px] font-black uppercase tracking-widest text-[#0284C7] mb-4 shadow-xs">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EAF6FD] border border-[#BFDDEC] text-[10px] font-black uppercase tracking-widest text-[#0284C7] mb-4 shadow-xs">
               <Sparkles className="w-3.5 h-3.5 text-[#0284C7]" />
               <span>Fintech & CFD Marketing · Project Coordination</span>
             </div>
@@ -106,7 +106,7 @@ export default function Hero() {
 
             {/* Template Signature: Bold Solid Name Badge */}
             <div className="mb-4">
-              <div className="inline-block bg-[#0284C7] text-white px-5 sm:px-7 py-2 sm:py-2.5 rounded-sm font-black text-3xl sm:text-5xl md:text-[54px] tracking-wider uppercase shadow-md leading-none">
+              <div className="inline-block bg-[#0284C7] text-white px-5 sm:px-7 py-2 sm:py-2.5 rounded-2xl font-black text-3xl sm:text-5xl md:text-[54px] tracking-wider uppercase shadow-md leading-none">
                 {PERSONAL_INFO.name}
               </div>
             </div>
@@ -130,7 +130,7 @@ export default function Hero() {
             <div className="flex flex-wrap items-center gap-3 w-full sm:w-auto">
               <Link
                 href="#projects"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 text-xs font-black uppercase tracking-wider text-white bg-slate-900 hover:bg-[#0284C7] rounded-sm transition-all duration-200 hover:-translate-y-0.5 shadow-md active:translate-y-0"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 text-xs font-black uppercase tracking-wider text-white bg-slate-900 hover:bg-[#0284C7] rounded-xl transition-all duration-200 hover:-translate-y-0.5 shadow-md active:translate-y-0"
               >
                 <span>Explore Selected Work</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -139,7 +139,7 @@ export default function Hero() {
               <a
                 href={PERSONAL_INFO.cvUrl}
                 download="CV_Hieu_Vu_Dang_Minh_2026.pdf"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 text-xs font-black uppercase tracking-wider text-slate-800 bg-white hover:bg-slate-50 border border-slate-300 rounded-sm transition-all duration-200 hover:-translate-y-0.5 shadow-xs"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 text-xs font-black uppercase tracking-wider text-slate-800 bg-white hover:bg-slate-50 border border-slate-300 rounded-xl transition-all duration-200 hover:-translate-y-0.5 shadow-xs"
               >
                 <Download className="w-3.5 h-3.5 text-[#0284C7]" />
                 <span>Download CV</span>
@@ -147,7 +147,7 @@ export default function Hero() {
 
               <Link
                 href="#contact"
-                className="inline-flex items-center justify-center gap-2 px-5 py-3 text-xs font-black uppercase tracking-wider text-slate-600 hover:text-slate-900 transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3 text-xs font-black uppercase tracking-wider text-slate-600 hover:text-slate-900 rounded-xl transition-colors"
               >
                 <Mail className="w-3.5 h-3.5" />
                 <span>Contact Me</span>
@@ -163,7 +163,7 @@ export default function Hero() {
                 {PERSONAL_INFO.targetRoles.map((role) => (
                   <span
                     key={role}
-                    className="px-2.5 py-1 text-[11px] font-bold bg-white border border-slate-200 text-slate-700 rounded-sm shadow-xs"
+                    className="px-3 py-1 text-[11px] font-bold bg-white border border-slate-200 text-slate-700 rounded-lg shadow-xs"
                   >
                     {role}
                   </span>

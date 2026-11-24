@@ -4,14 +4,14 @@ import { IMPACT_METRICS } from "@/data/portfolioData";
 export default function ImpactStats() {
   return (
     <section className="relative z-10 -mt-6 sm:-mt-8 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="bg-white border-2 border-slate-900 rounded-sm shadow-xl shadow-slate-900/08 overflow-hidden relative">
+      <div className="bg-white border border-slate-200/90 rounded-2xl sm:rounded-3xl shadow-xl shadow-sky-950/5 overflow-hidden relative">
         {/* Subtle top accent bar */}
         <div className="h-1 w-full bg-gradient-to-r from-[#0284C7] via-[#38BDF8] to-[#0284C7]" />
 
         {/* Editorial Subtitle Bar */}
         <div className="bg-[#F8FAFC] px-6 py-2.5 border-b border-slate-200 flex flex-wrap items-center justify-between gap-2">
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-xs bg-[#0284C7]" />
+            <span className="w-2 h-2 rounded-full bg-[#0284C7]" />
             <span className="text-[10px] font-black uppercase tracking-widest text-slate-900">
               Verified Project Performance & Career Impact (2023–2026)
             </span>

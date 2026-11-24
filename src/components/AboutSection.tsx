@@ -50,7 +50,7 @@ export default function AboutSection() {
           </div>
 
           <div className="lg:col-span-11 max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#EAF6FD] border border-[#BFDDEC] text-[10px] font-black uppercase tracking-widest text-[#0284C7] mb-3">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EAF6FD] border border-[#BFDDEC] text-[10px] font-black uppercase tracking-widest text-[#0284C7] mb-3">
               <Sparkles className="w-3.5 h-3.5" />
               <span>Coordination Mindset · Operating Philosophy</span>
             </div>
@@ -73,21 +73,21 @@ export default function AboutSection() {
             return (
               <div
                 key={pillar.title}
-                className="group relative p-7 bg-[#F8FAFC] border-2 border-slate-900 rounded-sm hover:shadow-xl hover:shadow-slate-900/10 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
+                className="group relative p-7 bg-white border border-slate-200/90 rounded-3xl hover:border-[#0284C7] shadow-sm hover:shadow-xl hover:shadow-sky-950/8 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
               >
                 {/* Offset wireframe border */}
                 <div
-                  className="absolute -top-2 -right-2 w-full h-full border border-sky-400 rounded-xs pointer-events-none group-hover:border-slate-900 transition-colors z-0"
+                  className="absolute -top-2 -right-2 w-full h-full border border-sky-300 rounded-3xl pointer-events-none group-hover:border-[#0284C7] transition-colors z-0"
                   aria-hidden="true"
                 />
 
                 <div className="relative z-10">
                   {/* Top row: Number 01., 02., 03. + Icon */}
-                  <div className="flex items-center justify-between mb-6 pb-3 border-b border-slate-200">
+                  <div className="flex items-center justify-between mb-6 pb-3 border-b border-slate-100">
                     <span className="text-3xl font-black text-slate-900 tracking-tight">
                       {pillar.num}.
                     </span>
-                    <div className="w-10 h-10 rounded-sm bg-white border border-slate-300 flex items-center justify-center text-[#0284C7] shadow-xs">
+                    <div className="w-10 h-10 rounded-xl bg-[#EAF6FD] border border-[#BFDDEC] flex items-center justify-center text-[#0284C7] shadow-xs">
                       <Icon className="w-5 h-5" />
                     </div>
                   </div>
@@ -101,11 +101,11 @@ export default function AboutSection() {
                   </p>
                 </div>
 
-                <div className="relative z-10 mt-6 pt-4 border-t border-slate-200 flex items-center justify-between">
-                  <span className="text-[10px] font-black uppercase tracking-wider text-[#0284C7]">
+                <div className="relative z-10 mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+                  <span className="px-3 py-1 rounded-full bg-[#EAF6FD] text-[10px] font-black uppercase tracking-wider text-[#0284C7]">
                     {pillar.tag}
                   </span>
-                  <ArrowRight className="w-4 h-4 text-slate-400 group-hover:translate-x-1 group-hover:text-slate-900 transition-all" />
+                  <ArrowRight className="w-4 h-4 text-slate-400 group-hover:translate-x-1 group-hover:text-[#0284C7] transition-all" />
                 </div>
               </div>
             );

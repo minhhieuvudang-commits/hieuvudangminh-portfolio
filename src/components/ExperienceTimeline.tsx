@@ -25,7 +25,7 @@ export default function ExperienceTimeline() {
           </div>
 
           <div className="lg:col-span-11 max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#EAF6FD] border border-[#BFDDEC] text-[10px] font-black uppercase tracking-widest text-[#0284C7] mb-3">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EAF6FD] border border-[#BFDDEC] text-[10px] font-black uppercase tracking-widest text-[#0284C7] mb-3">
               <Briefcase className="w-3.5 h-3.5" />
               <span>Career Milestones · Documented Track Record</span>
             </div>
@@ -46,14 +46,14 @@ export default function ExperienceTimeline() {
             <div key={exp.company} className="relative group">
               {/* Offset Wireframe Border */}
               <div
-                className="absolute -top-2.5 -right-2.5 w-full h-full border-2 border-slate-300 group-hover:border-[#0284C7] rounded-xs pointer-events-none transition-colors"
+                className="absolute -top-2.5 -right-2.5 w-full h-full border-2 border-sky-300 group-hover:border-[#0284C7] rounded-3xl pointer-events-none transition-colors"
                 aria-hidden="true"
               />
 
               {/* Main Card */}
-              <div className="relative z-10 p-7 sm:p-9 rounded-sm bg-white border-2 border-slate-900 shadow-md transition-all duration-300">
+              <div className="relative z-10 p-7 sm:p-9 rounded-3xl bg-white border border-slate-200/90 hover:border-[#0284C7] shadow-sm hover:shadow-xl hover:shadow-sky-950/8 transition-all duration-300">
                 {/* Header Information */}
-                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 pb-5 border-b border-slate-200">
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 pb-5 border-b border-slate-100">
                   <div>
                     <span className="text-[10px] font-black uppercase tracking-widest text-[#0284C7] block mb-1">
                       {exp.subtitle}
@@ -67,11 +67,11 @@ export default function ExperienceTimeline() {
                   </div>
 
                   <div className="flex flex-wrap md:flex-col md:items-end gap-2 text-xs font-bold">
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-slate-900 text-white rounded-xs uppercase tracking-wider text-[11px] shadow-xs">
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-slate-900 text-white rounded-full uppercase tracking-wider text-[11px] shadow-xs">
                       <Calendar className="w-3.5 h-3.5 text-sky-400" />
                       <span>{exp.period}</span>
                     </span>
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-slate-100 text-slate-700 border border-slate-200 rounded-xs text-[11px]">
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-slate-100 text-slate-700 border border-slate-200 rounded-full text-[11px]">
                       <MapPin className="w-3.5 h-3.5 text-[#0284C7]" />
                       <span>{exp.location}</span>
                     </span>
@@ -82,7 +82,7 @@ export default function ExperienceTimeline() {
                 <ul className="space-y-3 mb-6">
                   {exp.highlights.map((point) => (
                     <li key={point} className="flex items-start gap-3 text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
-                      <span className="w-1.5 h-1.5 rounded-xs bg-[#0284C7] mt-2 shrink-0" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#0284C7] mt-2 shrink-0" />
                       <span>{point}</span>
                     </li>
                   ))}
@@ -92,7 +92,7 @@ export default function ExperienceTimeline() {
                 {exp.keyStats && (
                   <div className="pt-4 border-t border-slate-100 grid grid-cols-2 sm:grid-cols-4 gap-4">
                     {exp.keyStats.map((stat) => (
-                      <div key={stat.label} className="bg-slate-50 p-3 rounded-xs border border-slate-200">
+                      <div key={stat.label} className="bg-slate-50 p-3.5 rounded-2xl border border-slate-200/80">
                         <span className="block text-xl font-black text-slate-900">
                           {stat.value}
                         </span>
