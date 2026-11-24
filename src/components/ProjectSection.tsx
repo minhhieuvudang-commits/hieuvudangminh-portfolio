@@ -246,7 +246,10 @@ export default function ProjectSection() {
   return (
     <section id="projects" ref={galleryRef} className="py-20 md:py-28 border-t border-slate-200 bg-[#FAFCFF] relative">
       {/* Decorative lookbook dot matrix in corner */}
-      <div className="absolute top-10 right-8 w-24 h-24 lookbook-dot-grid opacity-30 pointer-events-none" />
+      <div
+        className="absolute top-10 right-8 w-24 h-24 opacity-30 pointer-events-none"
+        style={{ backgroundImage: 'radial-gradient(#0284C7 1.5px, transparent 1.5px)', backgroundSize: '12px 12px' }}
+      />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         

@@ -9,8 +9,14 @@ export default function Hero() {
     <header className="relative overflow-hidden pt-8 pb-16 md:pt-14 md:pb-24 border-b border-[#D8EAF5] bg-[#FBFDFF]">
       {/* Background Subtle Magazine Watermark Grid */}
       <div className="absolute inset-0 pointer-events-none opacity-40">
-        <div className="absolute top-12 left-6 w-24 h-24 lookbook-dot-grid" />
-        <div className="absolute bottom-8 right-12 w-32 h-32 lookbook-dot-grid" />
+        <div
+          className="absolute top-12 left-6 w-24 h-24"
+          style={{ backgroundImage: 'radial-gradient(#0284C7 1.5px, transparent 1.5px)', backgroundSize: '12px 12px' }}
+        />
+        <div
+          className="absolute bottom-8 right-12 w-32 h-32"
+          style={{ backgroundImage: 'radial-gradient(#0284C7 1.5px, transparent 1.5px)', backgroundSize: '12px 12px' }}
+        />
       </div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -25,7 +31,10 @@ export default function Hero() {
             
             {/* Giant Vertical Margin Text "PORTFOLIO" (From template left margin) */}
             <div className="hidden xl:block absolute -left-20 top-1/2 -translate-y-1/2 select-none pointer-events-none">
-              <span className="lookbook-vertical-text text-7xl font-black tracking-[0.25em] text-sky-900/[0.06] uppercase">
+              <span
+                className="text-7xl font-black tracking-[0.25em] text-sky-900/[0.06] uppercase inline-block"
+                style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
+              >
                 PORTFOLIO
               </span>
             </div>
@@ -72,7 +81,10 @@ export default function Hero() {
               </div>
 
               {/* Dot Matrix Pattern Accent */}
-              <div className="absolute -left-6 -bottom-6 w-16 h-16 lookbook-dot-grid opacity-60 z-0 pointer-events-none" />
+              <div
+                className="absolute -left-6 -bottom-6 w-16 h-16 opacity-60 z-0 pointer-events-none"
+                style={{ backgroundImage: 'radial-gradient(#0284C7 1.5px, transparent 1.5px)', backgroundSize: '12px 12px' }}
+              />
             </div>
           </div>
 

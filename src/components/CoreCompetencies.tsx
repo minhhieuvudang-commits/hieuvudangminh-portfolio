@@ -17,7 +17,10 @@ export default function CoreCompetencies() {
         {/* Section Header */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-16">
           <div className="lg:col-span-1 hidden lg:flex justify-center">
-            <span className="lookbook-vertical-text text-5xl font-black tracking-[0.25em] text-slate-200 uppercase select-none pointer-events-none">
+            <span
+              className="text-5xl font-black tracking-[0.25em] text-slate-200 uppercase select-none pointer-events-none inline-block"
+              style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
+            >
               SKILLS
             </span>
           </div>

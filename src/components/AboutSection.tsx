@@ -30,7 +30,10 @@ export default function AboutSection() {
   return (
     <section id="about" className="py-20 md:py-28 border-t border-slate-200 bg-white relative overflow-hidden">
       {/* Decorative Lookbook Dot Grid */}
-      <div className="absolute top-12 left-8 w-24 h-24 lookbook-dot-grid opacity-30 pointer-events-none" />
+      <div
+        className="absolute top-12 left-8 w-24 h-24 opacity-30 pointer-events-none"
+        style={{ backgroundImage: 'radial-gradient(#0284C7 1.5px, transparent 1.5px)', backgroundSize: '12px 12px' }}
+      />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
@@ -38,7 +41,10 @@ export default function AboutSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-16">
           
           <div className="lg:col-span-1 hidden lg:flex justify-center">
-            <span className="lookbook-vertical-text text-5xl font-black tracking-[0.25em] text-slate-200 uppercase select-none pointer-events-none">
+            <span
+              className="text-5xl font-black tracking-[0.25em] text-slate-200 uppercase select-none pointer-events-none inline-block"
+              style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
+            >
               ABOUT ME
             </span>
           </div>
